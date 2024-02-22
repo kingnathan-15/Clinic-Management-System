@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Admin HomePage</h1>
+    {% for x in appointments %}
+          <h1>{{ x.PatientName }}</h1>
+          <p>
+            {{ x.firstname }}
+            {{ x.lastname }}
+          </p>
+    {% endfor %}
+    <p>
+    Currently there are:
+    </p>
+    <ul>
+        <li><strong>Total Appointments: {{ num_appointments }}</strong></li>
+    </ul>
+
+    <p>
+        You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}
+    </p>
+{% endblock %}

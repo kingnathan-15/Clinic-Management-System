@@ -1,0 +1,21 @@
+{%extends "physician/base_generic.html"%}
+
+{% block content%}
+    <h1> Create New Prescription </h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <form actions="" method="POST">
+                    <div class="form-group">
+                    {% csrf_token %}
+                    {{form}}
+                        <input type="submit" name="Submit">
+                    </div>
+                    </form>
+                </div>
+
+
+            </div>
+
+        </div>
+{% endblock%}

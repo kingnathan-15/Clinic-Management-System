@@ -1,0 +1,10 @@
+{% extends 'patients/base_generic.html' %}
+
+{% block content %}
+    <h2>Schedule Appointment</h2>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" name="Submit">
+    </form>
+{%endblock%}

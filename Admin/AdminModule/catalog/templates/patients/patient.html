@@ -1,0 +1,31 @@
+{% extends 'patients/base_generic.html'%}
+
+{% block content %}
+    <h5>Current Appointments</h5>
+		<hr>
+		<div class="card card-body">
+
+			<table class="table table-sm">
+				<tr>
+					<th>Appointment Date</th>
+					<th>Appointment Time</th>
+					<th>Status</th>
+					<th>Attending Physician</th>
+					<th>Cancel</th>
+				</tr>
+
+				{% for x in appointments%}
+					<tr>
+						<td>{{x.appointment_date}}</td>
+						<td>{{x.appointment_time}}</td>
+						<td>{{x.status}}</td>
+						<td>{{x.attending_physician}}</td>
+						<td><a class="btn btn-sm btn-danger" href="{% url 'delete_order' order.id %}">Delete</a></td>
+
+					</tr>
+				{% endfor %}
+
+
+
+			</table>
+{% endblock%}

@@ -1,0 +1,16 @@
+{% extends 'registration/base.html'%}
+
+{% block content %}
+
+<form method="POST" action="">
+    <div style="font-size: 10px">Already have an account? <a href="{% url 'log-in' %}" class="ml-2">Login</a></div>
+    {% csrf_token %}
+    {% for field in form %}
+    <label>{{field.label}}</label>
+        {{field}}
+    <br>
+    {% endfor %}
+    <input type="submit" name="Create User">
+</form>
+{{form.errors}}
+{% endblock %}

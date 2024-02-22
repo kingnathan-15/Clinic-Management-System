@@ -1,0 +1,15 @@
+.navbar .login-btn {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+}
+@media (max-width: 767px) {
+  .navbar .login-btn {
+    right: 75px;
+  }
+}
+
+.bg-custom{
+  --bs-bg-opacity: 1;
+  background-color: #2D9596;
+}

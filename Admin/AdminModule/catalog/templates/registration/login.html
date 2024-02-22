@@ -1,0 +1,22 @@
+{% extends "registration/base.html" %}
+
+{% block content %}
+    <form method="POST" action="">
+        <div style="font-size: 10px">Don't have an account yet? <a href="{% url 'register' %}" class="ml-2">Sign-Up</a></div>
+        {% csrf_token %}
+        <h3>Login Here</h3>
+
+        <label for="username">Username</label>
+        <input name="username" type="text" placeholder="Email or Phone" id="username">
+
+        <label for="password">Password</label>
+        <input name="password" type="password" placeholder="Password" id="password">
+
+
+
+        <input class="btn login_btn" type="submit" value="Login">
+    </form>
+    {% for message in messages %}
+            <p id="messages">{{message}}</p>
+    {% endfor %}
+{% endblock %}

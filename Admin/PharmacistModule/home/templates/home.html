@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+        {%block content%}
+        <!-- Page Content-->
+    <section class="pt-4">
+        <div class="container">
+            </br>
+            {% for prescri in  %}
+                <div class="card mb-3">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="{{ prescri.image.url }}" class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                            <center>
+                          <h3 class="fw-bolder">Patient: {{prescri.patient_name}}</h3>
+                          <h4 class="card-title">{{ prescri.name }}</h4>
+                          <br/>
+                          <h5 class="card-text">Dosage {{ prescri.dosage }}</h5>
+                                Ksh {{ prescri.price}}
+
+                      </br></br>
+                      <div class="row justify-content-center">
+                        <div class="col-md-2"> Quantity: </div>
+                        <div class="col-md-2">
+                          <select class="form-select" id="quantity-cart">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option> 
+                          </select>
+                        </div>
+                      </div>
+                              
+                        </center>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+            </div>
+             </section>     
+        
+       
+       
+        <br><br><br><br><br><br>
+        {%endblock%}
+        

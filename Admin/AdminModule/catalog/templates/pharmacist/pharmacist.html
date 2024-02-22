@@ -1,0 +1,32 @@
+{% extends 'pharmacist/base_generic.html' %}
+
+{% block content %}
+    		<h5>Total Inventory</h5>
+		<hr>
+		<div class="card card-body">
+
+			<table class="table table-sm">
+				<tr>
+					<th>Product</th>
+					<th>Price</th>
+					<th>Amount available</th>
+					<th>Update</th>
+					<th>Remove</th>
+				</tr>
+
+				{% for order in inventory %}
+					<tr>
+						<td>{{order.name}}</td>
+						<td>{{order.price}}</td>
+						<td>{{order.amount_available}}</td>
+						<td><a class="btn btn-sm btn-info" href="{% url 'update_Inventory' order.id%}">Update</a></td>
+
+						<td><a class="btn btn-sm btn-danger" href="{% url 'delete_Inventory' order.id%}">Delete</a></td>
+
+					</tr>
+				{% endfor %}
+
+
+			</table>
+
+{% endblock %}
